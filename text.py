@@ -81,7 +81,128 @@ l_date=date(2014,7,15)
 delattr=l_date-f_date
 print(delattr.days)
 
-#(15)
+#(15)Write a  Python program to get the volume of a sphere with radius six.
+from math import pi
+pi=22/7
+r=6.0
+v=4.0/3.0*pi*r**3
+print("the volume of sphere: ",v)
+
+#(16)Write a Python program to calculate the difference between a given number and 17.
+# If the number is greater than 17, return twice the absolute difference.
+def difference(n):
+	if n <= 17:
+		return 17 - n
+	else:
+		return(n-17)*2
+
+print (difference(22))
+print (difference(14))
+
+#(17)Write a Python program to test whether a number is within 100 of 1000 or 2000.
+def near_thousand(n):
+	return((abs(1000-n)<=100)or (abs(2000-n)<=100))
+
+print(near_thousand(800))
+
+print(near_thousand(1000))
+
+print(near_thousand(900))
+
+print(near_thousand(1200))
+
+#(18)Write a Python program to calculate the sum of three given numbers. If the values are equal, return three times their sum.
+
+def sum_thrice(a,b,c):
+	sum=a+b+c
+
+	if a==b==c:
+
+		sum=sum*3
+	return(sum)
+
+print(sum_thrice(1,2,3))
+
+print(sum_thrice(3,3,3))
+
+#(19) Write a Python program to get a newly-generated string from a given string where "Is" has been added to the front. Return the string unchanged if the given string already begins with "Is".
+
+def new_string(text):
+	if len(text)>=2 and text[:2]=="Is":
+		return text
+	else:
+		return "Is"+text
+print(new_string("Array"))
+print(new_string("IsEmpty"))
+			
+#(20)Write a  Python program that returns a string that is n (non-negative integer) copies of a given string.
+
+def larger_string(text, n):
+	result=" "
+	
+	for i in range(n):
+		result= result +" " + text
+
+	return result
+print(larger_string('A_S',2))	
+
+#(21)Write a Python program that determines whether a given number (accepted from the user) is even or odd, and prints an appropriate message to the user.
+num = int(input("input the number: "))
+mod=num%2
+if mod>0:
+	print("the number is the odd")
+else:
+	print("the number is the even")	
+
+#(22) Write a Python program to count the number 4 in a given list.
+def list_count_4(nums):
+	count=0
+	for i in nums:
+		 if i==4:
+		  count=count+1
+	return count	  
+
+print(list_count_4([1,8,4,7,4]))			
+
+#(23)Write a Python program to get n (non-negative integer) copies of the first 2 characters of a given string. Return n copies of the whole string if the length is less than 2
+def substring_copy(text, n):
+	flen=2
+	if flen> len(text):
+		flen=len(text)
+	substr=text[:flen]
+	result=" "	
+	for i in range(n):
+		result=result+substr
+	return result
+print(substring_copy("asd",5))		
 
 
-#(150)Write a Python function to check whether a distinct pair of numbers whose product is odd is present in a sequence of integer values.
+#(24)Write a Python program to test whether a passed letter is a vowel or not 
+def is_vowel(char):
+	all_vowels ='aeiou'
+	return char in all_vowels
+print(is_vowel('i')),print(is_vowel('s'))		
+
+
+#(25)Write a  Python program that checks whether a specified value is contained within a group of values.
+def is_group_numbers(groupdata, n):
+	for value in groupdata:
+		if n== value:
+			return True
+	return False
+print(is_group_numbers([1,5,8,1,4],4))		
+
+#(26)Write a Python program to create a histogram from a given list of integers.
+def histogram(items):
+	for n in items:
+		output=' '
+		items=n
+
+		while items>0:
+			output +='A'
+			items=items-1
+		print(output)
+histogram([4,5,3,3,5,4])		
+
+
+
